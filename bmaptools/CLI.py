@@ -92,10 +92,25 @@ class NamedFile(object):
     """
 
     def __init__(self, file_obj, name):
+        """
+        Initialize a file object.
+
+        Args:
+            self: (todo): write your description
+            file_obj: (todo): write your description
+            name: (str): write your description
+        """
         self._file_obj = file_obj
         self.name = name
 
     def __getattr__(self, name):
+        """
+        Returns the value from the given attribute.
+
+        Args:
+            self: (todo): write your description
+            name: (str): write your description
+        """
         return getattr(self._file_obj, name)
 
 def open_block_device(path):
